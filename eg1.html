@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="lib/jmvc.0.0.1.js"></script>
+	</head>
+	<body>
+		<script>
+			
+			var modelType1 = "model1";
+        	var Model1 = jmvc.setModel(modelType1);
+        	
+        	var Object1_1 = new Model1();
+        	var Object1_2 = new (jmvc.getModel(modelType1))();
+        	console.log(Object1_1);
+        	console.log(Object1_2);
+        	        	
+		</script>
+	</body>
+</html>

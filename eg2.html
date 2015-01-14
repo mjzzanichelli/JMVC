@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="lib/jmvc.0.0.1.js"></script>
+	</head>
+	<body>
+		<script>
+		
+        	var modelType1 = "model1",modelType2 = "model2",modelType3 = "model3",modelType4 = "model4";
+        	var Model1 = jmvc.setModel(modelType1,{"method":function(){console.log("I'm an extended method");}});
+        	var Model2 = jmvc.setModel(modelType2,{"method":function(){console.log("I'm also an extended method");}});
+        	var Model3 = jmvc.setModel(modelType3,Model1,Model2);
+        	var Model4 = jmvc.setModel(modelType4,Model2,Model1);
+        	
+        	//Properties are inherited from existing models and overwrite following the order of inheritance
+        	var Object1 = new Model1();
+        	var Object2 = new Model2();
+        	var Object3 = new Model3();
+        	var Object4 = new Model4();
+        	jmvc.extendModel("model4",{"method":function(){console.log("I'm a brand new extended method");}});
+        	
+        	console.log(Object1);
+        	console.log(Object2);
+			console.log(Object3);
+			console.log(Object4);
+        	        	
+		</script>
+	</body>
+</html>

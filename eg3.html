@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="lib/jmvc.0.0.1.js"></script>
+	</head>
+	<body>
+		<script>
+		
+        	var Model = jmvc.setModel("model",{"method":function(){console.log("I'm an extended method");}});
+        	var ObjectModel = new Model({
+        		"data": {me:"Marco"}
+        		, "templ":"my name is <%=me%>"
+        	});
+        	var ChildObjectModel = ObjectModel.create();
+        	
+        	
+        	console.log(ObjectModel.templ());
+        	console.log(ObjectModel.templ.exec());
+        	console.log(ObjectModel.templ.exec({me:" Jose "}));
+        	console.log(ObjectModel.templ.exec());
+        	console.log(ChildObjectModel.templ());
+        	console.log(ChildObjectModel.templ("<span>hello <%=me%></span>"));
+        	
+        	console.log(ChildObjectModel.templ.exec({me:" Pinco "}));
+        	ChildObjectModel.load({me:" Pallino "});
+        	console.log(ChildObjectModel.templ.exec());
+        	        	
+		</script>
+	</body>
+</html>

@@ -1,0 +1,18 @@
+REQUIREMENTS
++ No dependencies whatsoever
+
++ Modelling objects:
+	- default values
+	- template
+	- lifecycle events
+
++ Creation, Extension, Removal
+
++ Interpolation with the DOM
+
++ Caching of known values
+	
++ Make objects easily communicating each other
+	- publish/subscribe to data broadcasting
+	- events dispatching on resetting
+	
